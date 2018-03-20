@@ -26,7 +26,7 @@ let myInstance: MyClass = new MyClass(); // Class as a type
   If the type a variable is initialised with is know at build time,
   TypeScript will infer it's of that type and it can be left unspecified
 */
-let infered = 'string';
+let inferred = 'string';
 
 //</editor-fold>
 //<editor-fold desc="Enums">
