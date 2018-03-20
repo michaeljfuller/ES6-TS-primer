@@ -37,10 +37,10 @@ console.log(foo, bar);
 */
 
 //</editor-fold>
-//<editor-fold desc="Rest operator">
+//<editor-fold desc="Rest parameter">
 
 /*
-  The rest operator can be used to convert parameters into an array, or an array of arguments into individuals
+  The rest parameter can be used to convert parameters into an array.
  */
 
 /**
@@ -51,11 +51,22 @@ function log(name, ...otherParams){
   console.log(name);
   console.log(otherParams);
 }
+
 log("numbers", 1, 2, 3);
-log("anArray", "first", ...anArray); // Use rest on an array to split it into multiple arguments
+
+//</editor-fold>
+//<editor-fold desc="Spread operator">
 
 /*
-  You can also combine enhanced object literals with the rest operator to do a shallow clone of an object or array
+  The spread operator does the exact opposite of rest.
+  It expands an array/object into multiple arguments.
+*/
+
+console.log("Passing:", ...anArray, "!");
+// Same as: console.log("Passing:", anArray[0], anArray[1], anArray[2], anArray[3], anArray[4], "!");
+
+/*
+  You can combine enhanced object literals with the spread operator to do a shallow clone of an object or array
 */
 
 let clone = { ...person };
@@ -63,12 +74,5 @@ console.log(clone);
 
 let arrayCopy = [...anArray];
 console.log(arrayCopy);
-
-/*
- The rest operator can also be used to pass an array of arguments into a method as individual variables
-*/
-
-console.log("Passing:", ...anArray, "!");
-// Same as: console.log("Passing:", anArray[0], anArray[1], anArray[2], anArray[3], anArray[4], "!");
 
 //</editor-fold>
