@@ -88,6 +88,49 @@ class FactoryGreeting extends NormalGreeting{}
 
 console.log( ( new FactoryGreeting("Bob") ).greeting() );
 
+/*
+  This decorator lets you define a magic method,
+  which runs whenever a non-existent function is called.
+ */
+
+interface MagicCallback{
+  (string, Array):any
+}
+
+function magic(magicMethodCallback:MagicCallback){
+  return function (constructor:Function){
+    constructor.prototype = new Proxy(
+      constructor.prototype,
+      {
+        // When getting a property, use this rather than the default behavior
+        get: function (object, property) {
+          if (Reflect.has(object, property)) {
+            // If the property exists, get and return it
+            return Reflect.get(object, property);
+          } else {
+            // Otherwise, return our own method that calls the passed callback,
+            return function(...args){
+              return Reflect.apply(magicMethodCallback, null, [property, args]);
+            }
+          }
+        }
+      }
+    );
+
+    return constructor;
+  }
+}
+
+// Add magic method to MagicGreeting class
+@magic(
+  (name, args) => `Called magic "${name}" with [${args.join(', ')}].`
+)
+class MagicGreeting extends NormalGreeting{}
+let magicInstance = new MagicGreeting("Bob");
+
+console.log( magicInstance.greeting() );
+console.log( magicInstance.foo("foo", "bar") );
+
 //</editor-fold>
 //<editor-fold desc="Functor decorator">
 

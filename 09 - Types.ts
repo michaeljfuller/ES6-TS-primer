@@ -65,13 +65,34 @@ expectUserType(UserType.Admin);
 //</editor-fold>
 //<editor-fold desc="Additional return types">
 
+/*
+ The void return type specifies that nothing is returned
+*/
+
 function returnsNothing():void{
-  console.log("The void return type specifies that nothing is returned");
   // return true;
 }
-// function error():never{
-//   // throw new Error("The never type specifies that the method will never return");
-// }
+
+/*
+ The never type specifies that the method will never return
+*/
+
+function error():never{
+  throw new Error("Err");
+}
+
+/*
+  The 'this' return type is an alias for the type 'this' is in the given context.
+*/
+
+class OtherClass {
+  constructor(public name:string){}
+  getSelf():this{
+    return this;
+  }
+}
+let instance = new OtherClass("MyOther");
+console.log(instance.getSelf());
 
 //</editor-fold>
 //<editor-fold desc="Casting">
