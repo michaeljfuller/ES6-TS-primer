@@ -142,7 +142,7 @@ let ref:Reference = '003';
 ref = 3;
 
 //</editor-fold>
-//<editor-fold desc="Aliases">
+//<editor-fold desc="Declare">
 
 /*
   The declare keyword is a hint to the IDE/compiler,
