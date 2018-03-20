@@ -105,6 +105,13 @@ let someValue: any = "The compiler treats this as the 'any' type.";
 let strLength: number = (<string>someValue).length; // Cast to a string to use String.length.
 let altStrLength: number = (someValue as string).length; // Alternate syntax
 
+/*
+  Note: "Casting" is not the same as "converting". 
+  parseInt() actually converts a string into a number.
+  "myNumber as string" just tells the compiler to pretend a value as the type you specify 
+  when it does type-checking at build-time/design-time.
+*/
+
 //</editor-fold>
 //<editor-fold desc="Unions">
 
