@@ -1,0 +1,24 @@
+{
+  "name": "es6-ts-primer",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Quokka plugin is handy here.",
+  "main": "1-01 - Declarations.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaeljfuller/ES6-TS-primer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaeljfuller/ES6-TS-primer/issues"
+  },
+  "homepage": "https://github.com/michaeljfuller/ES6-TS-primer#readme",
+  "dependencies": {
+    "@types/bcrypt": "^1.0.0",
+    "bcrypt": "^1.0.3"
+  }
+}
